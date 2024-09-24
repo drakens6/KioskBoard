@@ -575,6 +575,7 @@
             'bubbles': true,
             'cancelable': true,
           });
+          
           // event for input element trigger change: end
 
           // input element keypress listener: begin
@@ -654,6 +655,11 @@
                     // update input value
                     input.value = theInputValArray.join('');
 
+                    //create input event
+                    var inputEvent = new Event('input', {
+                      'bubbles': true,
+                      'data': input.value
+                    });
                     // set next selection index
                     if (input.type !== 'number') {
                       input.setSelectionRange(theInputSelIndex + 1, theInputSelIndex + 1);
@@ -661,6 +667,7 @@
 
                     // input trigger change event for update the value
                     input.dispatchEvent(changeEvent);
+                    input.dispatchEvent(inputEvent);
                   }
                 });
               }
