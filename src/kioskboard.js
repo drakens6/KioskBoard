@@ -575,7 +575,6 @@
             'bubbles': true,
             'cancelable': true,
           });
-          
           // event for input element trigger change: end
 
           // input element keypress listener: begin
